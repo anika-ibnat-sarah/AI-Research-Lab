@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Lab | Daffodil International University</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="lab.css">
+    
+    <!-- Bootstrap Grid Only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts for Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== PREMIUM HEADER ==================== -->
+    <header class="header">
+        <div class="header-top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="header-info"><i class="icon">📍</i> Daffodil International University, Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="header-info"><i class="icon">📧</i> airesearchlab@diu.edu.bd | <i class="icon">📞</i> +880 1700000000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-md-3">
+                        <div class="logo-container">
+                            <img src="data:image/jpeg;base64,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" alt="AI Research Lab Logo" class="logo-img">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <h1 class="lab-title">Artificial Intelligence Research Laboratory</h1>
+                        <p class="lab-tagline">Pioneering Tomorrow's Intelligence Today</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 text-end">
+                        <p class="dept-name">Department of Computing &<br>Information Systems</p>
+                        <p class="uni-name">Daffodil International University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu-list">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#research" class="nav-link">Research Domains</a></li>
+                <li><a href="#team" class="nav-link">Our Team</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#contact" class="nav-link">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO BANNER ==================== -->
+    <section id="home" class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">Advancing the Frontiers of<br><span class="highlight">Intelligent Systems</span></h2>
+                    <p class="hero-subtitle">
+                        We are a multidisciplinary research hub dedicated to developing transformative AI solutions 
+                        that address complex real-world challenges across healthcare, education, agriculture, and smart cities.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#research" class="btn-primary">Explore Research</a>
+                        <a href="#contact" class="btn-secondary">Collaborate With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 stat-item">
+                        <h3 class="stat-number">50+</h3>
+                        <p class="stat-label">Publications</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <h3 class="stat-number">15+</h3>
+                        <p class="stat-label">Researchers</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <h3 class="stat-number">10+</h3>
+                        <p class="stat-label">Industry Partners</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <h3 class="stat-number">5</h3>
+                        <p class="stat-label">Active Grants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Who We Are</span>
+                <h2 class="section-title">About Our Laboratory</h2>
+                <p class="section-subtitle">A center of excellence driving innovation in artificial intelligence and machine learning research since 2020.</p>
+            </div>
+            
+            <div class="about-intro">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-text-content">
+                            <h3 class="about-heading">Bridging Academia & Industry Through Cutting-Edge AI Research</h3>
+                            <p class="about-description">
+                                The Artificial Intelligence Research Laboratory at Daffodil International University stands as a beacon 
+                                of innovation in South Asia's rapidly evolving tech landscape. Founded with a vision to democratize 
+                                advanced AI research, our lab brings together brilliant minds from diverse backgrounds to tackle 
+                                society's most pressing challenges through intelligent systems.
+                            </p>
+                            <p class="about-description">
+                                Our state-of-the-art facility is equipped with high-performance computing clusters, GPU workstations, 
+                                and specialized sensors, enabling our researchers to push the boundaries of what's possible in 
+                                machine learning, computer vision, natural language processing, and robotics.
+                            </p>
+                            <div class="about-highlights">
+                                <div class="highlight-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>World-Class Research Infrastructure</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>International Collaborations</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>Industry-Academia Partnership Model</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image-wrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJbNVyMf4otrWwZWupf5M9d9WsrddO3D8ErY_L3FmkMab3oavvOASdA9Q&s" alt="AI Research Lab Facility" class="about-image" height="500" width="200">
+                            <div class="experience-badge">
+                                <span class="exp-number">5+</span>
+                                <span class="exp-text">Years of Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision, Mission, Goals Cards -->
+            <div class="about-cards-row">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="vision-card">
+                            <div class="card-icon">🎯</div>
+                            <h3 class="card-title">Our Vision</h3>
+                            <p class="card-text">
+                                To establish ourselves as a globally recognized center of AI excellence, producing groundbreaking 
+                                research that shapes the future of technology while nurturing the next generation of AI innovators 
+                                and ethical technology leaders.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mission-card">
+                            <div class="card-icon">🚀</div>
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">
+                                We are committed to advancing the theoretical foundations of AI while developing practical, 
+                                deployable solutions that create positive societal impact. Our mission encompasses rigorous 
+                                research, quality education, and meaningful industry collaboration.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="goals-card">
+                            <div class="card-icon">⭐</div>
+                            <h3 class="card-title">Research Goals</h3>
+                            <p class="card-text">
+                                Publish in top-tier venues (NeurIPS, ICML, CVPR), secure competitive grants, develop 
+                                open-source tools, mentor graduate students, and translate research into products 
+                                that benefit local communities and global markets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESEARCH AREAS ==================== -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag light-tag">What We Do</span>
+                <h2 class="section-title light-title">Core Research Domains</h2>
+                <p class="section-subtitle light-subtitle">Our research spans six interconnected domains, each pushing the boundaries of current AI capabilities.</p>
+            </div>
+
+            <div class="research-grid">
+                <div class="row g-4">
+                    <!-- Machine Learning -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom ml-color">
+                                <span class="card-emoji">🤖</span>
+                                <h3 class="rc-title">Machine Learning</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Developing algorithms that enable systems to learn and improve from experience without explicit programming.</p>
+                                <ul class="rc-list">
+                                    <li>Deep Neural Network Architectures</li>
+                                    <li>Ensemble Learning Methods</li>
+                                    <li>Reinforcement Learning Systems</li>
+                                    <li>Federated & Privacy-Preserving ML</li>
+                                    <li>Explainable AI (XAI)</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">12 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deep Learning -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom dl-color">
+                                <span class="card-emoji">🧠</span>
+                                <h3 class="rc-title">Deep Learning</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Leveraging multi-layered neural networks to model complex patterns in high-dimensional data.</p>
+                                <ul class="rc-list">
+                                    <li>Transformer Models & Attention Mechanisms</li>
+                                    <li>Generative Adversarial Networks (GANs)</li>
+                                    <li>Graph Neural Networks</li>
+                                    <li>Self-Supervised Learning</li>
+                                    <li>Neural Architecture Search (NAS)</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">9 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Computer Vision -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom cv-color">
+                                <span class="card-emoji">👁️</span>
+                                <h3 class="rc-title">Computer Vision</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Enabling machines to interpret and understand the visual world through advanced image processing.</p>
+                                <ul class="rc-list">
+                                    <li>Medical Image Analysis & Diagnosis</li>
+                                    <li>Autonomous Navigation Systems</li>
+                                    <li>Video Understanding & Action Recognition</li>
+                                    <li>3D Reconstruction & Scene Understanding</li>
+                                    <li>Visual Question Answering</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">8 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NLP -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom nlp-color">
+                                <span class="card-emoji">💬</span>
+                                <h3 class="rc-title">Natural Language Processing</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Building systems that understand, interpret, and generate human language with contextual awareness.</p>
+                                <ul class="rc-list">
+                                    <li>Large Language Models (LLMs)</li>
+                                    <li>Sentiment Analysis & Opinion Mining</li>
+                                    <li>Machine Translation for Low-Resource Languages</li>
+                                    <li>Dialogue Systems & Chatbots</li>
+                                    <li>Text Summarization & Information Extraction</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">10 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Robotics -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom rob-color">
+                                <span class="card-emoji">🦾</span>
+                                <h3 class="rc-title">Robotics & Automation</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Designing intelligent robotic systems capable of perceiving, reasoning, and acting in dynamic environments.</p>
+                                <ul class="rc-list">
+                                    <li>Autonomous Mobile Robots</li>
+                                    <li>Robotic Manipulation & Grasping</li>
+                                    <li>Human-Robot Collaboration (HRC)</li>
+                                    <li>Swarm Robotics & Multi-Agent Systems</li>
+                                    <li>Agricultural Robotics</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">6 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="research-card">
+                            <div class="card-header-custom ds-color">
+                                <span class="card-emoji">📊</span>
+                                <h3 class="rc-title">Data Science & Analytics</h3>
+                            </div>
+                            <div class="card-body-custom">
+                                <p class="rc-intro">Extracting actionable insights from complex datasets through statistical modeling and visualization.</p>
+                                <ul class="rc-list">
+                                    <li>Predictive Analytics & Forecasting</li>
+                                    <li>Big Data Processing Pipelines</li>
+                                    <li>Data Visualization & Storytelling</li>
+                                    <li>Time Series Analysis</li>
+                                    <li>Anomaly Detection Systems</li>
+                                </ul>
+                                <div class="rc-footer">
+                                    <span class="project-count">7 Active Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TEAM SECTION ==================== -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our People</span>
+                <h2 class="section-title">Meet the Research Team</h2>
+                <p class="section-subtitle">Our diverse team of researchers, faculty, and students drives innovation through collaboration and expertise.</p>
+            </div>
+
+            <!-- Director -->
+            <div class="team-category-block">
+                <h3 class="category-title"><span class="cat-line"></span>Laboratory Director<span class="cat-line"></span></h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card director-card">
+                            <div class="team-photo-wrapper">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_tLVuGHsIyNjgBWmn8lAO1tbf2R_PTjVmkxuFaujla4QsUdNzWUb8fh8&s" alt="Dr.Zayn Al Rasheed" class="team-photo">
+                                <div class="social-links">
+                                    <a href="#" class="social-link">in</a>
+                                    <a href="#" class="social-link">📧</a>
+                                    <a href="#" class="scholar-link">G📄</a>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Prof. Dr.Zayn Al Rasheed</h4>
+                                <p class="member-role">Professor & Founding Director</p>
+                                <p class="member-bio">
+                                    A distinguished researcher with over 18 years of experience in machine learning and pattern recognition. 
+                                    Published 90+ papers in top-tier conferences including NeurIPS, ICML, and CVPR. Recipient of the 
+                                    National Science Award for AI Innovation (2023). PhD from MIT.
+                                </p>
+                                <div class="member-expertise">
+                                    <span class="expertise-tag">Machine Learning</span>
+                                    <span class="expertise-tag">Deep Learning</span>
+                                    <span class="expertise-tag">Healthcare AI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Members -->
+            <div class="team-category-block">
+                <h3 class="category-title"><span class="cat-line"></span>Faculty Researchers<span class="cat-line"></span></h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Dr. Rahi Islam" class="team-photo">
+                                <div class="social-links">
+                                    <a href="#" class="social-link">in</a>
+                                    <a href="#" class="social-link">📧</a>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Assoc. Prof. Dr. Rahi Islam</h4>
+                                <p class="member-role">Associate Professor</p>
+                                <p class="member-bio">
+                                    Specializes in computer vision and medical image analysis. Leading a major grant on 
+                                    early cancer detection using deep learning. Published 45+ papers.
+                                </p>
+                                <div class="member-expertise">
+                                    <span class="expertise-tag">Computer Vision</span>
+                                    <span class="expertise-tag">Medical AI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Dr. Kamrul Hassan" class="team-photo">
+                                <div class="social-links">
+                                    <a href="#" class="social-link">in</a>
+                                    <a href="#" class="social-link">📧</a>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Asst. Prof. Dr. Kamrul Hassan</h4>
+                                <p class="member-role">Assistant Professor</p>
+                                <p class="member-bio">
+                                    Expert in NLP and multilingual AI. Developed the first Bengali large language model. 
+                                    Focuses on low-resource language processing and cross-lingual transfer learning.
+                                </p>
+                                <div class="member-expertise">
+                                    <span class="expertise-tag">NLP</span>
+                                    <span class="expertise-tag">LLMs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Dr. Nazneen Akter" class="team-photo">
+                                <div class="social-links">
+                                    <a href="#" class="social-link">in</a>
+                                    <a href="#" class="social-link">📧</a>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Asst. Prof. Dr. Nazneen Akter</h4>
+                                <p class="member-role">Assistant Professor</p>
+                                <p class="member-bio">
+                                    Robotics specialist focusing on autonomous systems and human-robot interaction. 
+                                    Leads the agricultural robotics initiative. Former researcher at Stanford AI Lab.
+                                </p>
+                                <div class="member-expertise">
+                                    <span class="expertise-tag">Robotics</span>
+                                    <span class="expertise-tag">Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students -->
+            <div class="team-category-block">
+                <h3 class="category-title"><span class="cat-line"></span>Graduate Researchers & Assistants<span class="cat-line"></span></h3>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-card student-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Sarah" class="team-photo student-photo">
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Sarah</h4>
+                                <p class="member-role">Ph.D. Candidate</p>
+                                <p class="member-bio-short">
+                                    Medical imaging, won Best Paper Award at MICCAI 2024.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-card student-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Rafiqul Islam" class="team-photo student-photo">
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Rafiq Islam</h4>
+                                <p class="member-role">M.S. Researcher</p>
+                                <p class="member-bio-short">
+                                    Reinforcement learning for autonomous navigation systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-card student-card">
+                            <div class="team-photo-wrapper">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN2x7pw2Cjh4bLTJj-yLyKlnveF3CKQ8PDXwkq5HqEdUdbqDFwD2zdlVY&s" alt="Lamiya Aktar" class="team-photo student-photo">
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Lamiya Akter</h4>
+                                <p class="member-role">M.S. Researcher</p>
+                                <p class="member-bio-short">
+                                    NLP for low-resource languages, 3 publications in 2024.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-card student-card">
+                            <div class="team-photo-wrapper">
+                                <img src="data:image/jpeg;base64,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" alt="Tanvir Chowdhury" class="team-photo student-photo">
+                            </div>
+                            <div class="team-info">
+                                <h4 class="member-name">Tanvir Chowdhury</h4>
+                                <p class="member-role">Research Assistant</p>
+                                <p class="member-bio-short">
+                                    Data science and predictive analytics for smart city applications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PUBLICATIONS HIGHLIGHT ==================== -->
+    <section id="publications" class="pub-section">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag light-tag">Our Work</span>
+                <h2 class="section-title light-title">Selected Publications</h2>
+            </div>
+            
+            <div class="pub-grid">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pub-card">
+                            <div class="pub-year">2024</div>
+                            <h4 class="pub-title">Deep Learning-Based Early Detection of Diabetic Retinopathy in Fundus Images</h4>
+                            <p class="pub-authors">Hassan A., Rahman F., Islam S., et al.</p>
+                            <p class="pub-venue">Medical Image Analysis (MICCAI), Impact Factor: 10.5</p>
+                            <span class="pub-badge">Best Paper Award</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pub-card">
+                            <div class="pub-year">2024</div>
+                            <h4 class="pub-title">BanglaBERT: A Pretrained Language Model for Low-Resource Bengali NLP</h4>
+                            <p class="pub-authors">Uddin K., Jahan N., Hossain R.</p>
+                            <p class="pub-venue">ACL Findings 2024</p>
+                            <span class="pub-badge">Highly Cited</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pub-card">
+                            <div class="pub-year">2023</div>
+                            <h4 class="pub-title">Multi-Object Tracking in Crowded Scenes Using Graph Neural Networks</h4>
+                            <p class="pub-authors">Akter N., Ahmed T., Hassan A.</p>
+                            <p class="pub-venue">CVPR 2023 (Conference on Computer Vision)</p>
+                            <span class="pub-badge">Spotlight Presentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Connect With Us</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Interested in collaboration, joining our team, or learning more about our research? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="contact-info-box">
+                            <h3 class="contact-info-title">Contact Information</h3>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">📍</div>
+                                <div class="info-details">
+                                    <strong>Laboratory Address</strong>
+                                    <p>Room 401, Academic Building 2<br>Daffodil International University<br>Dhaka-1207, Bangladesh</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">📧</div>
+                                <div class="info-details">
+                                    <strong>Email Address</strong>
+                                    <p>airesearch@diu.edu.bd<br>collaborations.ai@diu.edu.bd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">📞</div>
+                                <div class="info-details">
+                                    <strong>Phone Numbers</strong>
+                                    <p>+880-1234-567890 (Office)<br>+880-9876-543210 (Lab Direct)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">🕐</div>
+                                <div class="info-details">
+                                    <strong>Office Hours</strong>
+                                    <p>Sunday - Thursday: 9:00 AM - 5:00 PM<br>Friday - Saturday: By Appointment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-7">
+                        <form class="contact-form-enhanced" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label for="firstname" class="form-label-enhanced">First Name *</label>
+                                    <input type="text" id="firstname" name="firstname" class="form-input-enhanced" placeholder="Enter first name" required>
+                                </div>
+                                <div class="form-group-half">
+                                    <label for="lastname" class="form-label-enhanced">Last Name *</label>
+                                    <input type="text" id="lastname" name="lastname" class="form-input-enhanced" placeholder="Enter last name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group-full">
+                                <label for="email" class="form-label-enhanced">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input-enhanced" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group-full">
+                                <label for="subject" class="form-label-enhanced">Subject *</label>
+                                <select id="subject" name="subject" class="form-input-enhanced form-select-enhanced" required>
+                                    <option value="">Select a topic...</option>
+                                    <option value="collaboration">Research Collaboration</option>
+                                    <option value="admission">Graduate Admission Inquiry</option>
+                                    <option value="funding">Funding Opportunity</option>
+                                    <option value="media">Media / Press Inquiry</option>
+                                    <option value="general">General Question</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group-full">
+                                <label for="message" class="form-label-enhanced">Your Message *</label>
+                                <textarea id="message" name="message" class="form-textarea-enhanced" rows="6" placeholder="Tell us about your inquiry, research interests, or collaboration ideas..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn-enhanced">
+                                <span>Send Message</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-premium">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-col">
+                            <h4 class="footer-heading">AI Research Lab</h4>
+                            <p class="footer-about">
+                                Pioneering intelligent solutions for tomorrow's challenges. 
+                                Committed to excellence in AI research, education, and innovation.
+                            </p>
+                            <div class="footer-social">
+                                <a href="#" class="footer-social-link">FB</a>
+                                <a href="#" class="footer-social-link">TW</a>
+                                <a href="#" class="footer-social-link">LI</a>
+                                <a href="#" class="footer-social-link">GH</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#research">Research</a></li>
+                                <li><a href="#team">Team</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Research Areas</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">Machine Learning</a></li>
+                                <li><a href="#">Deep Learning</a></li>
+                                <li><a href="#">Computer Vision</a></li>
+                                <li><a href="#">NLP</a></li>
+                                <li><a href="#">Robotics</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Newsletter</h4>
+                            <p class="footer-newsletter-text">Subscribe to get updates on our latest research and events.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email" class="newsletter-input">
+                                <button type="submit" class="newsletter-btn">→</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2026 AI Research Lab, DIU. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="footer-credits">Designed with ❤️ for CIS 133L Course Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
